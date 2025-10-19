@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZX SHOP Bot Sistemleri ve Fiyatları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Renk Paleti: Lacivert/Siyah/Beyaz */
+        :root {
+            --dark-background: #121212; /* Koyu Siyah */
+            --primary-color: #2c3e50;    /* Koyu Lacivert (Discord'a yakın) */
+            --accent-color: #3498db;     /* Canlı Mavi (Vurgu) */
+            --text-light: #ecf0f1;       /* Açık Gri/Beyaz */
+            --card-background: #1e2c3a;  /* Kart Arkaplanı */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-background);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- BAŞLIK BÖLÜMÜ --- */
+        header {
+            background-color: var(--primary-color);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #bdc3c7;
+        }
+        
+        /* --- KARTLAR VE SİSTEMLER BÖLÜMÜ --- */
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .card {
+            background-color: var(--card-background);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .card h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            font-size: 1.8em;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2em;
+            font-weight: 800;
+            color: #2ecc71; /* Yeşil renk fiyat için vurgu */
+            margin: 15px 0;
+        }
+        
+        .price span {
+            font-size: 0.5em;
+            font-weight: 400;
+            color: #bdc3c7;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '✔️';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- BUTON STİLİ --- */
+        .btn-discord {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-discord:hover {
+            background-color: #2980b9;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #2c3e50;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>ZX SHOP</h1>
+            <p>Discord sunucunuzunza profesyonel botlar satın alın.</p>
+            <a href="discord.gg/zxshop" class="btn-discord" target="_blank">Discord Sunucumuza Katıl !</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="system-grid">
+            
+            <div class="card">
+                <h2>Fivem Mesai Bot</h2>
+                <p>Fivemde bulunan legal departmanlar için yapılmıi profesyonel discord botudur..</p>
+                <div class="price">300.00 TL <span>/ Aylık</span></div>
+                <ul>
+                    <li>Mesai Sayma Sistemi</li>
+                </ul>
+                <a href="discord.gg/zxshop" class="btn-discord">Hemen Sipariş Ver</a>
+            </div>
+
+            <div class="card">
+                <h2>Ticket Bot</h2>
+                <p>YAKINDA!.</p>
+                <div class="price">00.00 TL <span>/ Aylık</span></div>
+                <ul>
+                  
+                </ul>
+                <a href="discord.gg/zxshop" class="btn-discord">Hemen Sipariş Ver</a>
+            </div>
+
+            <div class="card">
+                <h2>Public Bot Pack</h2>
+                <p>YAKINDA!.</p>
+                <div class="price">00.00 TL <span>/ Aylık</span></div>
+                <ul>
+                   
+                </ul>
+                <a href="discord.gg/zxshop" class="btn-discord">Hemen Sipariş Ver</a>
+            </div>
+
+        </div>
+        
+        <p style="text-align: center; margin-top: 30px; color: #95a5a6;">
+            **Fiyatlar ve detaylı kurulum bilgileri için lütfen Discord sunucumuza katılın ve TİCKET oluşturun.**
+        </p>
+
+    </div>
+
+    <footer>
+        &copy; 2025 ZX SHOP. Tüm Hakları Saklıdır.
+    </footer>
+
+</body>
+</html>
