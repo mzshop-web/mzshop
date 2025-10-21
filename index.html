@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MZ SHOP Bot Sistemleri ve Fiyatları</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Renk Paleti: Lacivert/Siyah/Beyaz */
+        /* YENİ RENK PALETİ: Siyah / Beyaz / Mor */
         :root {
-            --dark-background: #121212; /* Koyu Siyah */
-            --primary-color: #2c3e50;    /* Koyu Lacivert (Discord'a yakın) */
-            --accent-color: #3498db;     /* Canlı Mavi (Vurgu) */
-            --text-light: #ecf0f1;       /* Açık Gri/Beyaz */
-            --card-background: #1e2c3a;  /* Kart Arkaplanı */
+            --dark-background: #000000;  /* Saf Siyah Arkaplan */
+            --primary-color: #1a1a1a;    /* Kartlar ve Başlık için Koyu Gri */
+            --accent-color: #9b59b6;     /* Canlı Mor (Vurgu) */
+            --text-light: #ffffff;       /* Saf Beyaz Metin */
+            --price-color: #3498db;      /* Fiyatlar için mavi tonu */
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--dark-background);
             color: var(--text-light);
             margin: 0;
@@ -25,7 +25,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px; /* Biraz daha dar tuttuk */
             margin: 0 auto;
             padding: 20px;
         }
@@ -33,110 +33,126 @@
         /* --- BAŞLIK BÖLÜMÜ --- */
         header {
             background-color: var(--primary-color);
-            padding: 40px 0;
+            padding: 40px 0 20px 0; /* Alttan boşluğu azalttık */
             text-align: center;
-            border-bottom: 3px solid var(--accent-color);
+            border-bottom: 4px solid var(--accent-color);
         }
 
         header h1 {
-            font-size: 3em;
+            font-size: 2.8em;
             margin-bottom: 5px;
             font-weight: 800;
         }
 
         header p {
-            font-size: 1.2em;
-            color: #bdc3c7;
+            font-size: 1.1em;
+            color: #ccc;
+            margin-top: 5px;
         }
         
         /* --- KARTLAR VE SİSTEMLER BÖLÜMÜ --- */
         .system-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 40px 0;
+            gap: 25px; /* Boşlukları azalttık */
+            padding: 30px 0;
         }
 
         .card {
-            background-color: var(--card-background);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 5px solid var(--accent-color);
+            background-color: var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05); /* Beyaz parlak gölge */
+            transition: transform 0.3s, border-color 0.3s;
+            border: 1px solid #333; /* Hafif bir çerçeve */
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 20px rgba(155, 89, 182, 0.2); /* Mor gölge efekti */
         }
 
         .card h2 {
             color: var(--accent-color);
-            margin-top: 0;
-            font-size: 1.8em;
-            border-bottom: 2px solid #34495e;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            font-size: 1.6em;
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+        
+        /* Fiyat kısmını daha net yaptık */
+        .price-section {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #222;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .price {
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: 800;
-            color: #2ecc71; /* Yeşil renk fiyat için vurgu */
-            margin: 15px 0;
+            color: var(--text-light); 
         }
         
         .price span {
             font-size: 0.5em;
             font-weight: 400;
-            color: #bdc3c7;
+            color: #aaa;
         }
-
+        
+        /* --- ÖZELLİK LİSTESİ --- */
         ul {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin-top: 15px;
         }
 
         ul li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             padding-left: 20px;
             position: relative;
+            font-size: 0.95em;
+            color: #ccc;
         }
 
         ul li::before {
-            content: '✔️';
+            content: '•';
             color: var(--accent-color);
+            font-weight: 900;
             position: absolute;
             left: 0;
         }
 
         /* --- BUTON STİLİ --- */
         .btn-discord {
-            display: inline-block;
+            display: block; /* Tam genişlikte buton */
+            text-align: center;
             background-color: var(--accent-color);
-            color: white;
-            padding: 12px 30px;
+            color: var(--text-light);
+            padding: 12px 20px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
-            margin-top: 20px;
+            margin-top: 15px;
             transition: background-color 0.3s;
         }
 
         .btn-discord:hover {
-            background-color: #2980b9;
+            background-color: #7d3c98; /* Morun koyu tonu */
         }
 
         /* --- FOOTER --- */
         footer {
             text-align: center;
             padding: 20px 0;
-            border-top: 1px solid #2c3e50;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #95a5a6;
+            border-top: 1px solid #333;
+            margin-top: 30px;
+            font-size: 0.85em;
+            color: #777;
         }
     </style>
 </head>
@@ -145,8 +161,9 @@
     <header>
         <div class="container">
             <h1>MZ SHOP</h1>
-            <p>Discord sunucununuza profesyonel botlar satın alın. 7/24 hizmet güvencesi.</p>
-            <a href="https://discord.gg/mzshop" class="btn-discord" target="_blank">Discord Sunucumuza Katıl !</a>
+            <p>Discord Sunucunuz İçin Gelişmiş Bot Sistemleri!</p>
+             <p>discord.gg/mzshop</p>
+              <p>zennix01</p>
         </div>
     </header>
 
@@ -155,50 +172,96 @@
         <div class="system-grid">
             
             <div class="card">
-                <h2>Fivem Mesai Bot</h2>
-                <p>Fivemde bulunan legal departmanlar için yapılmıi profesyonel discord botudur..</p>
-                <div class="price">300.00 TL <span>/ Aylık</span></div>
+                <h2>Fivem Mesai ve Legal Sunucu Yönetim Botu</h2>
+                <p style="color: #ccc; font-size: 0.9em;">Legal departmanınızı rahatlıkla yönetmenizi sağlayan bot sistemimizdir..</p>
+                <div class="price-section">
+                    <div class="price">300.00 TL</div>
+                    <a href="https://discord.gg/mzshop" class="btn-discord" style="display: inline-block;">Hemen Sipariş Ver</a>
+                </div>
                 <ul>
-                    <li>Mesai Sayma Sistemi</li>
+                    <li>Gelişmiş Mesai Giriş Çıkış Sistemi</li>
+                    <li>Otomatik Mesai Sistemi</li>
+                    <li>Ayrıntılı Loglama Sistemi</li>
+                    <li>Onaylı Kanıt Depo Sistemi</li>
+                    <li>İc-isim panel sistemi</li>
+                    <li>Mazaret Sistemi</li>
+                    <li>Sivil-izin Sistemi</li>
+                    <li>Perm-istek sistemi</li>
+                    <li>Top Mesai-Kanıt Depo ve daha birçok komut avantajı.</li>
                 </ul>
-                <a href="https://discord.gg/zshop" class="btn-discord">Hemen Sipariş Ver</a>
             </div>
 
             <div class="card">
-                <h2>Ticket Bot</h2>
-                <p>YAKINDA!.</p>
-                <div class="price">00.00 TL <span>/ Aylık</span></div>
+                <h2>Discord Backup Bot</h2>
+                <p style="color: #ccc; font-size: 0.9em;">Discord sunucunuzun belirlenen sürede bir kanal ve rol yedeğini almanızı sağlar.</p>
+                <div class="price-section">
+                    <div class="price">500.00 TL</div>
+                    <a href="https://discord.gg/mzshop" class="btn-discord" style="display: inline-block;">Hemen Sipariş Ver</a>
+                </div>
                 <ul>
-                  
+                    <li>Loglu Yedekleme Sistemi</li>
+                    <li>Rol ve Kanal Kurma Sistemi</li>
+                    <li>Sunucuyu tekrar sıfırdan kurma garantisi</li>
                 </ul>
-                <a href="https://discord.gg/zshop" class="btn-discord">Hemen Sipariş Ver</a>
             </div>
 
             <div class="card">
-                <h2>Public Bot Pack</h2>
-                <p>YAKINDA!.</p>
-                <div class="price">00.00 TL <span>/ Aylık</span></div>
+                    <h2>YAKINDA!</h2>
+                <p style="color: #ccc; font-size: 0.9em;"></p>
+                <div class="price-section">
+                    <div class="price"></div>
+                    <a href="https://discord.gg/mzshop" class="btn-discord" style="display: inline-block;">Hemen Sipariş Ver</a>
+                </div>
                 <ul>
-                   
+            
                 </ul>
-                <a href="https://discord.gg/zshop" class="btn-discord">Hemen Sipariş Ver</a>
+            </div>
+              <div class="card">
+                    <h2>YAKINDA!</h2>
+                <p style="color: #ccc; font-size: 0.9em;"></p>
+                <div class="price-section">
+                    <div class="price"></div>
+                    <a href="https://discord.gg/mzshop" class="btn-discord" style="display: inline-block;">Hemen Sipariş Ver</a>
+                </div>
+                <ul>
+            
+                </ul>
+            </div>
+              <div class="card">
+                    <h2>YAKINDA!</h2>
+                <p style="color: #ccc; font-size: 0.9em;"></p>
+                <div class="price-section">
+                    <div class="price"></div>
+                    <a href="https://discord.gg/mzshop" class="btn-discord" style="display: inline-block;">Hemen Sipariş Ver</a>
+                </div>
+                <ul>
+            
+                </ul>
+            </div>
+              <div class="card">
+                    <h2>YAKINDA!</h2>
+                <p style="color: #ccc; font-size: 0.9em;"></p>
+                <div class="price-section">
+                    <div class="price"></div>
+                    <a href="https://discord.gg/mzshop" class="btn-discord" style="display: inline-block;">Hemen Sipariş Ver</a>
+                </div>
+                <ul>
+            
+                </ul>
             </div>
 
         </div>
         
-        <p style="text-align: center; margin-top: 30px; color: #95a5a6;">
-            **Fiyatlar ve detaylı kurulum bilgileri için lütfen Discord sunucumuza katılın ve TİCKET oluşturun.**
+        <p style="text-align: center; margin-top: 30px; font-size: 1.1em; color: #ccc;">
+            Tüm hizmet detayları ve kurulum bilgileri için Discord sunucumuza katılarak bizimle iletişime geçin.
         </p>
 
     </div>
 
     <footer>
         &copy; 2025 MZ SHOP. Tüm Hakları Saklıdır.
+        <a href="https://discord.gg/mzshop" style="color: var(--accent-color); text-decoration: none; margin-left: 10px;">| Destek Al</a>
     </footer>
 
 </body>
-
 </html>
-
-
-
